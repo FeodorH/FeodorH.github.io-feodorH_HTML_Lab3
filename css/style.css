@@ -1,45 +1,149 @@
 header {
     background: gray;
     color: black;
-    padding: 20px;
-    overflow: hidden; /* Обтекание float */
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
 }
-
-        .logo {
-    width: 90px;
-    height: 90px;
+        
+.logo {
+    width: 80px;
+    height: 80px;
     border-radius: 50%;
-    float: left;
-    margin-right: 20px;
+    margin-bottom: 10px;
     object-fit: cover;
 }
-
-        .header-right {
-    overflow: hidden; /* Новый блок обтекания */
+        
+.header-right {
+    width: 100%;
+}
+        
+.site-title {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 10px 0;
 }
 
 nav {
-    float: right;
-    margin-bottom: 10px;
-    max-width: 960px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
 }
 
 nav a {
 color: black;
-margin-left: 20px;
-padding: 5px 10px;
-background: rgba(255,255,255,0.1);
-        }
-
-                .site-title {
-    font-size: 24px;
-    font-weight: bold;
-    margin: 0;
-    padding-top: 10px;
-    clear: both; /* Очистка обтекания */
+padding: 8px 12px;
+background: rgba(255,255,255,0.3);
+text-decoration: none;
+border-radius: 4px;
+}
+        
+.content {
+    max-width: 100%;
+    margin: 20px 0; /* Убираем боковые отступы */
+    padding: 15px;
+    background: #ddd;
+    display: flex;
+    flex-direction: column; /* Меняем порядок элементов */
 }
 
-/* Основные стили страницы */
+/* 2. Меняем порядок отображения на мобильных */
+.table-container {
+    order: 1;
+}
+        
+.list {
+    order: 2;
+}
+        
+.form {
+    order: 3;
+}
+        
+.footer {
+    background: gray;
+    color: black;
+    text-align: center;
+    padding: 20px;
+    margin-top: 20px;
+    width: 100%;
+}
+
+/* Стили для ПК (min-width: 768px) */
+@media (min-width: 768px) {
+header {
+    flex-direction: row;
+    text-align: left;
+    padding: 20px;
+    width: auto;
+    align-items: flex-start;
+}
+            
+.logo {
+    width: 90px;
+    height: 90px;
+    margin-right: 20px;
+    margin-bottom: 0;
+}
+            
+.header-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 90px;
+    flex: 1; /* Занимает всё оставшееся пространство */
+}
+            
+.site-title {
+    font-size: 24px;
+    margin: 0;
+    padding-top: 10px;
+    align-self: flex-end; /* Название внизу */
+    order: 2; /* Название после меню в потоке */
+}
+
+nav {
+    flex-direction: row;
+    margin-top: 0;
+    order: 1; /* Меню перед названием в потоке */
+    align-self: flex-start; /* Меню вверху */
+}
+
+nav a {
+    margin-left: 20px;
+}
+
+
+.content {
+    max-width: 960px;
+    margin: 40px auto;
+    padding: 20px;
+    border-radius: 10px;
+    display: block;
+}
+            
+.table-container {
+    order: 0;
+}
+            
+.list {
+    order: 0;
+}
+            
+.form {
+    order: 0;
+}
+            
+.footer {
+    width: auto;
+    text-align: left;
+}
+        }
+
 body {
     font-family: 'Arial', sans-serif;
     margin: 0;
@@ -47,81 +151,66 @@ body {
     background: #ecf0f1;
 }
 
-        .content {
-    max-width: 960px;
-    margin: 40px auto;
-    padding: 20px;
-    background: #ddd;
-    border-radius: 10px;
-}
-
-/*Список*/
-
-		.list {
+.list {
     max-width: 880px;
     background-color: #999;
-    margin: 20px 40px;
-    padding: 40px;
+    margin: 20px 0; /* Убираем боковые отступы для мобильных */
+    padding: 20px; /* Уменьшаем отступы для мобильных */
     border-radius: 10px;
 }
 
-		.list li {
+.list li {
 margin: 10px 0;
 padding: 5px;
-		}
+        }
 
-                .list a {
+.list a {
 color: #333;
 text-decoration: none;
-		}
+        }
 
-
-                /*таблица*/
-                .table {
+.table {
     width: 100%;
     max-width: 880px;
-    margin: 40px auto;
+    margin: 20px 0; /* Убираем авто отступы для мобильных */
     border-collapse: collapse;
     background: white;
 }
 
-        .table th, .table td {
-padding: 12px;
+.table th, .table td {
+padding: 10px; /* Уменьшаем отступы для мобильных */
 border: 1px solid #ddd;
 text-align: center;
-        }
+}
 
-                .table th {
+.table th {
 background: #2c3e50;
 color: white;
 font-weight: bold;
-        }
+}
 
-                /* Четные строки */
-                .table tbody tr:nth-child(even) {
+.table tbody tr:nth-child(even) {
     background-color: #f8f9fa;
 }
 
-/* Нечетные строки */
-        .table tbody tr:nth-child(odd) {
+.table tbody tr:nth-child(odd) {
     background-color: #e9ecef;
 }
 
-/*форма*/
-        .form {
+.form {
     max-width: 800px;
-    margin: 40px auto;
-    padding: 40px;
+    margin: 20px 0; /* Убираем авто отступы для мобильных */
+    padding: 20px; /* Уменьшаем отступы для мобильных */
     background: #999;
     border-radius: 10px;
 }
 
-        .simple-form p {
+.form p {
 margin: 15px 0;
-overflow: hidden; /* Clearfix */
-        }
+overflow: hidden;
+}
 
-                .label {
+.label {
     float: left;
     width: 200px;
     padding: 5px 10px 0 0;
@@ -129,7 +218,7 @@ overflow: hidden; /* Clearfix */
     font-weight: bold;
 }
 
-        .radio-label, .checkbox-label {
+.radio-label, .checkbox-label {
     float: left;
     margin: 0 20px 0 0;
 }
@@ -155,14 +244,18 @@ button {
     cursor: pointer;
 }
 
-        .clearfix {
+.clearfix {
     overflow: hidden;
 }
 
-		.footer {
-    background: gray;
-    color: black;
-    text-align: left;
-    padding: 20px;
-    margin-top: 40px;
+/* Для очень маленьких экранов */
+@media (max-width: 480px) {
+list, .form {
+    padding: 15px;
+}
+            
+.table th, .table td {
+padding: 8px;
+font-size: 14px;
+}
 }
