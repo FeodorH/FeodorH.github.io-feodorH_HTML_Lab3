@@ -1,1 +1,168 @@
+header {
+    background: gray;
+    color: black;
+    padding: 20px;
+    overflow: hidden; /* Обтекание float */
+}
 
+        .logo {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    float: left;
+    margin-right: 20px;
+    object-fit: cover;
+}
+
+        .header-right {
+    overflow: hidden; /* Новый блок обтекания */
+}
+
+nav {
+    float: right;
+    margin-bottom: 10px;
+    max-width: 960px;
+}
+
+nav a {
+color: black;
+margin-left: 20px;
+padding: 5px 10px;
+background: rgba(255,255,255,0.1);
+        }
+
+                .site-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0;
+    padding-top: 10px;
+    clear: both; /* Очистка обтекания */
+}
+
+/* Основные стили страницы */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #ecf0f1;
+}
+
+        .content {
+    max-width: 960px;
+    margin: 40px auto;
+    padding: 20px;
+    background: #ddd;
+    border-radius: 10px;
+}
+
+/*Список*/
+
+		.list {
+    max-width: 880px;
+    background-color: #999;
+    margin: 20px 40px;
+    padding: 40px;
+    border-radius: 10px;
+}
+
+		.list li {
+margin: 10px 0;
+padding: 5px;
+		}
+
+                .list a {
+color: #333;
+text-decoration: none;
+		}
+
+
+                /*таблица*/
+                .table {
+    width: 100%;
+    max-width: 880px;
+    margin: 40px auto;
+    border-collapse: collapse;
+    background: white;
+}
+
+        .table th, .table td {
+padding: 12px;
+border: 1px solid #ddd;
+text-align: center;
+        }
+
+                .table th {
+background: #2c3e50;
+color: white;
+font-weight: bold;
+        }
+
+                /* Четные строки */
+                .table tbody tr:nth-child(even) {
+    background-color: #f8f9fa;
+}
+
+/* Нечетные строки */
+        .table tbody tr:nth-child(odd) {
+    background-color: #e9ecef;
+}
+
+/*форма*/
+        .form {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 40px;
+    background: #999;
+    border-radius: 10px;
+}
+
+        .simple-form p {
+margin: 15px 0;
+overflow: hidden; /* Clearfix */
+        }
+
+                .label {
+    float: left;
+    width: 200px;
+    padding: 5px 10px 0 0;
+    text-align: right;
+    font-weight: bold;
+}
+
+        .radio-label, .checkbox-label {
+    float: left;
+    margin: 0 20px 0 0;
+}
+
+input[type="text"],
+input[type="tel"],
+input[type="email"],
+input[type="date"],
+select,
+textarea {
+    float: left;
+    width: 300px;
+    padding: 5px;
+    border: 1px solid #ccc;
+}
+
+button {
+    float: left;
+    padding: 10px 20px;
+    background: #2c3e50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+        .clearfix {
+    overflow: hidden;
+}
+
+		.footer {
+    background: gray;
+    color: black;
+    text-align: left;
+    padding: 20px;
+    margin-top: 40px;
+}
