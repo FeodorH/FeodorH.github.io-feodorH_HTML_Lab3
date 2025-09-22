@@ -80,41 +80,52 @@ header {
     text-align: left;
     padding: 20px;
     width: auto;
-    align-items: flex-start;
+    align-items: flex-start; /* Выравнивание по верху */
 }
-            
+    
 .logo {
     width: 90px;
     height: 90px;
     margin-right: 20px;
     margin-bottom: 0;
+    align-self: stretch; /* Лого занимает всю высоту хедера */
+    object-fit: cover;
 }
-            
+    
 .header-right {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    height: 90px;
-    flex: 1; /* Занимает всё оставшееся пространство */
+    justify-content: space-between; /* Распределяем пространство */
+    align-items: flex-start; /* Выравнивание по левому краю */
+    flex: 1; /* Занимает оставшееся пространство */
+    height: auto; /* Убираем фиксированную высоту */
+    position: relative; /* Для позиционирования меню */
 }
-            
+    
 .site-title {
     font-size: 24px;
     margin: 0;
-    padding-top: 10px;
-    align-self: flex-end; /* Название внизу */
+    padding-top: 30px;
+    align-self: flex-start; /* Название слева */
     order: 2; /* Название после меню в потоке */
+    margin-top: auto; /* Прижимаем название к низу */
+    padding-left: 0; /* Убираем отступ слева */
 }
-
+    
 nav {
     flex-direction: row;
     margin-top: 0;
     order: 1; /* Меню перед названием в потоке */
-    align-self: flex-start; /* Меню вверху */
+    align-self: flex-end; /* Меню справа */
+    margin-left: auto; /* Прижимаем меню к правому краю */
+    position: absolute; /* Абсолютное позиционирование */
+    top: 0; /* Вверху */
+    right: 0; /* Справа */
 }
-
+    
 nav a {
     margin-left: 20px;
+    margin-right: 0;
 }
 
 
