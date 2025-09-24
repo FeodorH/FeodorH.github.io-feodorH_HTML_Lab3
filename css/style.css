@@ -73,8 +73,24 @@ border-radius: 4px;
     width: 100%;
 }
 
+.table {
+    width: 100%; /* Занимает всю ширину экрана */
+    max-width: 100%; /* Убираем ограничение в 880px */
+    margin: 20px 0;
+    border-collapse: collapse;
+    background: white;
+}
+
+.form {
+    width: auto;
+    margin: 10px 0;
+    padding: 10px;
+    background: #999;
+    border-radius: 10px;
+}
+
 /* Стили для ПК (min-width: 768px) */
-@media (min-width: 768px) {
+@media (min-width: 1000px) {
 header {
     flex-direction: row;
     text-align: left;
@@ -145,15 +161,28 @@ nav a {
     order: 0;
 }
             
-.form {
-    order: 0;
-}
-            
 .footer {
     width: auto;
     text-align: left;
 }
-        }
+
+.table {
+    width: 960px;
+    margin: 10px 0; /* Убираем авто отступы для мобильных */
+    border-collapse: collapse;
+    background: white;
+}
+
+.form {
+    order: 0;
+    margin: 40px auto;
+    padding: 80px;
+    background: #999;
+    border-radius: 10px;
+    width: auto;
+}
+
+}
 
 body {
     font-family: 'Arial', sans-serif;
@@ -163,7 +192,6 @@ body {
 }
 
 .list {
-    max-width: 880px;
     background-color: #999;
     margin: 20px 0; /* Убираем боковые отступы для мобильных */
     padding: 20px; /* Уменьшаем отступы для мобильных */
@@ -178,16 +206,8 @@ padding: 5px;
 .list a {
 color: #333;
 text-decoration: none;
-        }
-
-.table {
-    width: 100%;
-    max-width: 880px;
-    margin: 20px 0; /* Убираем авто отступы для мобильных */
-    border-collapse: collapse;
-    background: white;
 }
-
+        
 .table th, .table td {
 padding: 5px;
 border: 1px solid #ddd;
@@ -206,14 +226,6 @@ font-weight: bold;
 
 .table tbody tr:nth-child(odd) {
     background-color: #e9ecef;
-}
-
-.form {
-    max-width: 800px;
-    margin: 20px 0; /* Убираем авто отступы для мобильных */
-    padding: 20px; /* Уменьшаем отступы для мобильных */
-    background: #999;
-    border-radius: 10px;
 }
 
 .form p {
