@@ -189,7 +189,7 @@ text-decoration: none;
 }
 
 .table th, .table td {
-padding: 10px; /* Уменьшаем отступы для мобильных */
+padding: 5px;
 border: 1px solid #ddd;
 text-align: center;
 }
